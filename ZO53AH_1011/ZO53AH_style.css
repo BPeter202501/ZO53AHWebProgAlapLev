@@ -1,13 +1,12 @@
-
 .table {
-    width: 450px
+    width: 450px;
     height: 525px;
-    border collapse: collapse;
-    font family: Verdena, Geneva, Tahoma, sans-serif;
+    border-collapse: collapse;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 .gray {
-    background-color: #cccccc
+    background-color: #cccccc;
     font-style: italic;
     text-align: center;
     height: 50px;
@@ -23,8 +22,7 @@
     text-align: center;
 }
 .scroll {
-    overflow: visible;
-    overflow-x: scroll;
+    overflow: auto;
     height: 150px;
     width: 150px;
     text-align: justify;
