@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videó lejátszása_ZO53AH</title>
+
+    <style>
+        .grid {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 1rem;
+            width: 40rem;
+        }
+
+        footer {
+            border-top: 4px solid gray;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            width: 37.5rem;
+            text-align: right;
+        }
+    </style>
+        
+</head>
+<body>
+
+    <header>
+        <h1>Videó lejátszása</h1>
+    </header>
+    
+    <section>
+        <video src="ZO53AH_video.mp4" id="video" autoplay="false"
+        controls width="600"></video>
+        
+        <div class="grid">
+            <div>
+                <button id="start">Indítás</button>
+                <button id="stop">Leállítás</button>
+            </div>
+            <div>
+                <button id="startstop">Indítás/Leállítás</button>
+            </div>
+            <div>
+                <button id="mute">Néma</button>
+                <button id="quite">Halk</button>
+                <button id="loud">Hangos</button>
+            </div>
+            <div>
+                <button id="veryslow">Nagyon lassú</button>
+                <button id="slow">Lassú</button>
+                <button id="normal">Normál</button>
+                <button id="fast">Gyors</button>
+                <button id="veryfast">Nagyon gyors</button>
+            </div>
+            <div>
+                <button id="small">Kicsi</button>
+                <button id="normalsize">Normál</button>
+                <button id="big">Nagy</button>
+            </div>
+            <div>
+                <button id="hasitended">Befejeződött-e?</button>
+                <button id="lenght">Videó hossza (mp)</button>
+                <button id="currently">Jelenlegi pozíció</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Forrás: <a href="https://www.w3schools.com/html/html5_video.asp">W3Schools</a>
+    </footer>
+
+    <script>
+        let btnclick = (id, onclick) => document.getElementById(id).
+        addEventListener("click", onclick);
+
+        const video = document.guerySelector("video");
+
+        btnclick("start", () => video.play());
+        btnclick("stop", () => video.pause());
+        btnclick("startstop", () => video.paused ? video.play() : video.pause());
+        
+        btnclick("mute", () => video.volume = 0);
+        btnclick("quite", () => video.volume - 0.1);
+        btnclick("loud", () => video.volume + 0.1);
+        
+        btnclick("veryslow", () => video.playbackRate = 0.5);
+        btnclick("slow", () => video.playbackRate = 0.75);
+        btnclick("normal", () => video.playbackRate = 1);
+        btnclick("fast", () => video.playbackRate = 1.25);
+        btnclick("veryfast", () => video.playbackRate = 1.5);
+        
+        btnclick("small", () => video.width = 400);
+        btnclick("normalsize", () => video.width = 600);
+        btnclick("big", () => video.width = 800);
+        
+        btnclick("hasitended", () => alert(video.ended));
+        btnclick("lenght", () => alert(video.duration));
+        btnclick("currently", () => alert(video.currentTime));
+    </script>
+
+</body>
+</html>

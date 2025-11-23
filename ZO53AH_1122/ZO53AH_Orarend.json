@@ -1,0 +1,42 @@
+{
+    "ZO53AH_orarend": {
+        "ora": [
+            {
+                "targy": "Webprogramozás alapjai",
+                "datum": {
+                    "nap": ,
+                    "tol": ,
+                    "ig": 
+                },
+                "helyszin": ,
+                "oktato": ,
+                "szak": ,
+            }
+
+            {
+                "targy": ,
+                "datum": {
+                    "nap": ,
+                    "tol": ,
+                    "ig": 
+                },
+                "helyszin": ,
+                "oktato": ,
+                "szak": ,
+            }
+
+            {
+                "targy": ,
+                "datum": {
+                    "nap": ,
+                    "tol": ,
+                    "ig": 
+                },
+                "helyszin": ,
+                "oktato": ,
+                "szak": ,
+            }
+
+        ]
+    }
+}
