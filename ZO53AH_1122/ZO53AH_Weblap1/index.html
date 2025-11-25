@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url(kepek/hatter.jpg);
+            font-family: "Inter", sans-serif;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-wrapper {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        nav.menu {
+            width: 200px;
+            font-size: 14pt;
+            padding: 20px;
+        }
+
+        nav.menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav.menu li {
+            margin-bottom: 12px;
+        }
+
+        main.content {
+            flex: 1;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+        }
+
+        .text-image-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .text {
+            flex: 1;
+            color: white;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .side-img {
+            width: 300px;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+        }
+
+        a:link {
+            color: white;
+            font-weight: bold;
+        }
+        a:visited {
+            color: lightcyan;
+        }
+        a:hover {
+            color: lightgray;
+        }
+        a:active {
+            color: gray;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="wrap">
+
+        <header>
+            <a href="kezdolap.html"><img src="kepek/the.png" alt="the"></a>
+        </header>
+
+        <div class="main-wrapper">
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="kezdolap.html">Kezdőlap</a></li>
+                    <li><a href="adatbazis.html">Adatbázisrendszerek</a></li>
+                    <li><a href="webprog.html">Webprogramozás alapjai</a></li>
+                    <li><a href="webxml.html">Webes adatkezelő környezetek</a></li>
+                </ul>
+            </nav>
+
+            <main class="content">
+                
+                <div class="text-image-box">
+
+                    <div class="text">
+                        <p><b>Üdvözlöm a honlapomon!</b></p>
+                        <p>Ezt a weblapot a Webprogramozás alapjai kurzuson készítettem el.</p>
+
+                        <div><b>Forrás:</b></div>
+                        <div>W3 Schools</div>
+                        <div>THE tantárgyi leírások</div>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>Benke Péter, ZO53AH, 2025</footer>
+
+</body>
+</html>
