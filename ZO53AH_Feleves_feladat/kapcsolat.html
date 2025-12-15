@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lépj kapcsolatba Minta János portré- és esküvői fotóssal. Árajánlatkérés űrlap és ügyfélvélemények.">
+    <meta name="keywords" content="kapcsolat, árajánlatkérés, fotós elérhetőség, időpont egyeztetés">
+    <meta name="author" content="Minta János">
+
+    <title>Kapcsolat - Minta János</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        .kapcsolat-leiras {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .kontakt-form {
+            max-width: 100%;
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-sor {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .checkbox-sor input[type="checkbox"] {
+            margin-top: 3px;
+        }
+
+        .submit-sor {
+            margin-top: 20px;
+        }
+
+        .submit-sor button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: #facc15;
+            color: #111;
+        }
+
+        .submit-sor button:hover {
+            background-color: #ffe58f;
+        }
+
+        .hiba {
+            border-color: #ff4d4d !important;
+        }
+
+        .hiba-uzenet {
+            color: #ff8080;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .siker-uzenet {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #14532d;
+            color: #bbf7d0;
+            font-size: 14px;
+        }
+
+        .velemeny-leiras {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #d0d0d0;
+        }
+
+        .velemeny-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .velemeny-kartya {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+        }
+
+        .velemeny-kartya h4 {
+            margin: 0;
+            font-size: 15px;
+            color: #facc15;
+        }
+
+        .velemeny-datum {
+            font-size: 12px;
+            color: #aaaaaa;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .velemeny-kartya p {
+            margin: 0;
+            font-size: 14px;
+            color: #eeeeee;
+            line-height: 1.5;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Minta János - Fényképész</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="rolam.html">Rólam</a></li>
+
+            <li class="dropdown"><a href="portfolio.html">Portfólió</a>
+                <ul class="dropdown-menu">
+                    <li><a href="portre.html">Portré</a></li>
+                    <li><a href="eskuvo.html">Esküvő</a></li>
+                </ul>
+            </li>
+
+            <li><a href="arlista.html">Árlista</a></li>
+            <li><a href="kapcsolat.html" class="active">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    </header>
+
+    <div class="container">
+
+        <div class="main-layout">
+
+            <section>
+                <h2>Kapcsolat / Árajánlatkérés</h2>
+
+                <p class="kapcsolat-leiras">
+                    Ha szeretnél időpontot foglalni fotózásra, árajánlatot kérni, vagy csak kérdésed van,
+                    töltsd ki az alábbi űrlapot. Igyekszem minden megkeresésre 1-2 munkanapon belül válaszolni.
+                </p>
+
+                <form id="kapcsolatForm" class="kontakt-form" novalidate>
+                    <div class="form-group">
+                        <label for="nev">Név *</label>
+                        <input type="text" id="nev" name="nev" placeholder="Teljes neved">
+                        <div class="hiba-uzenet" id="nevHiba"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail cím *</label>
+                        <input type="email" id="email" name="email" placeholder="pl. valaki@example.com">
+                        <div class="hiba-uzenet" id="emailHiba"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefon">Telefonszám *</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="pl. +36 30 123 4567">
+                        <div class="hiba-uzenet" id="telefonHiba"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipus">Fotózás típusa *</label>
+                        <select id="tipus" name="tipus">
+                            <option value="">-- Válassz típust --</option>
+                            <option value="portre">Portré fotózás</option>
+                            <option value="eskuvo">Esküvői fotózás</option>
+                            <option value="egyeb">Egyéb fotózás</option>
+                        </select>
+                        <div class="hiba-uzenet" id="tipusHiba"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datum">Tervezett időpont (opcionális)</label>
+                        <input type="date" id="datum" name="datum">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="uzenet">Üzenet / részletek *</label>
+                        <textarea id="uzenet" name="uzenet" placeholder="Írd le röviden, mit szeretnél (helyszín, elképzelés, létszám stb.)."></textarea>
+                        <div class="hiba-uzenet" id="uzenetHiba"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-sor">
+                            <input type="checkbox" id="adatkezeles" name="adatkezeles">
+                            <label for="adatkezeles">
+                                Elfogadom, hogy az adataimat az árajánlatkérés kezeléséhez felhasználod. *
+                            </label>
+                        </div>
+                        <div class="hiba-uzenet" id="adatkezelesHiba"></div>
+                    </div>
+
+                    <div class="submit-sor">
+                        <button type="submit">Üzenet elküldése</button>
+                    </div>
+
+                    <div id="visszajelzes" class="siker-uzenet" style="display: none;">
+                        Köszönöm a megkeresést! Üzenetedet rögzítettem, hamarosan jelentkezem.
+                    </div>
+                </form>
+            </section>
+
+            <aside>
+                <h3>Ügyfeleim mondták</h3>
+                <p class="velemeny-leiras">
+                    Néhány visszajelzés azoktól, akik már jártak nálam fotózáson.
+                </p>
+
+                <div id="velemenyek" class="velemeny-lista">
+                </div>
+                <div id="velemenyHiba" class="hiba-uzenet"></div>
+            </aside>
+
+        </div>
+
+        <div style="margin-top: 20px; font-size: 14px;">
+            Forrás: <a href="https://www.pexels.com/hu-hu/">pexels.com</a>,
+            <a href="https://www.w3schools.com/">W3Schools</a>,
+            <a href="https://www.youtube.com/watch?v=uKVVSwXdLr0&t=63s">YouTube</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Minta János</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

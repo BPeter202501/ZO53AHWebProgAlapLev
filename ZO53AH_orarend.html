@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>ZO53AH - Órarend</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e6f0ff;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        th {
+            background: #cfe4ff;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>ZO53AH - Órarend</h1>
+
+<table id="orarend">
+    <thead>
+        <tr>
+            <th>Dátum</th>
+            <th>Nap</th>
+            <th>Idő</th>
+            <th>Tantárgy</th>
+            <th>Helyszín</th>
+            <th>Oktató</th>
+            <th>Szak</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<script>
+    fetch("ZO53AH_orarend.json")
+        .then(response => response.json())
+        .then(data => {
+            const orak = data.ZO53AH_orarend.ora;
+            const tbody = document.querySelector("#orarend tbody");
+
+            orak.forEach(ora => {
+                const tr = document.createElement("tr");
+
+                tr.innerHTML = `
+                    <td>${ora.datum.datum}</td>
+                    <td>${ora.datum.nap}</td>
+                    <td>${ora.datum.tol} - ${ora.datum.ig}</td>
+                    <td>${ora.targy}</td>
+                    <td>${ora.helyszin}</td>
+                    <td>${ora.oktato}</td>
+                    <td>${ora.szak}</td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        })
+        .catch(err => {
+            console.error("Hiba a JSON beolvasásakor:", err);
+        });
+</script>
+
+</body>
+</html>
